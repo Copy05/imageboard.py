@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imageboard.py</title>
+    <title>{{Tag}} - imageboard.py</title>
 </head>
 <body>
+    <h1 style="text-align: center; font-family: sans-serif;">{{Tag}}</h1>
     <div style="text-align: center; margin-top: 100px;">
-        {% for image in images %}
-        <a href="/p?p={{ loop.index }}"><img src="{{image}}" alt="" style="height: 300px;"></a>
+        {% for name, image in images %}
+        <a href="/p?p={{ name }}"><img src="{{ image }}" alt="" style="height: 300px;"></a>
         {% endfor %}
     </div>
 </body>

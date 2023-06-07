@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID:{{image|replace("static/cdn/", "")|replace(".png", "")|replace("/", "")}} imageboard.py</title>
+</head>
+<body>
+
+    <style>
+        a {
+            text-decoration: none;
+            font-family: sans-serif;
+            transition: 0.2s;
+        }
+
+        a:hover {
+            opacity: 70%;
+        }
+
+        .copyright, .copyright:visited {
+            color: limegreen;
+        }
+
+        .tags, .tags:visited {
+            color: #3672ff;
+        }
+    </style>
+
+    <div style="text-align: center; margin-top: 100px;">
+        <img src="{{image}}" alt="" style="height: 300px;">
+    </div>
+    <p style="text-align: center;">
+        <a class="copyright" href="/t?tags={{Copyright}}">{{ Copyright|replace("_", " ") }}</a><br>
+        {% for tag in Tags %}
+        <a class="tags" href="/t?tags={{tag}}">{{ tag|replace("_", " ") }}, </a>
+        {% endfor %}
+    </p>
+        
+</body>
+</html>
